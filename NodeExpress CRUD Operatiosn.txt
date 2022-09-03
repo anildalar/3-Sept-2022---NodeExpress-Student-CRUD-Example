@@ -18,6 +18,10 @@ Step.
 2. We deploye on internet then we test with public url(Heroku)
 
 
+https://www.geeksforgeeks.org/node-js-crud-operations-using-mongoose-and-mongodb-atlas/
+
+https://ngrok.com/
+
 
 
 
