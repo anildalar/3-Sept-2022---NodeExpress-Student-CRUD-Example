@@ -1,0 +1,45 @@
+Upcomming Classes 
+
+NodeExpress CRUD Operations: (Beginer Level)
+
+E.g Do a Student CRUD Operations
+
+
+Software Design Pattern: - None (Everthing will be in single file)
+
+What we will Learn New Things
+1. Ngrok  (Access LocalHost from Public URL)
+2. Heroku ( Deployment on Internet  )
+	
+
+Step. 
+
+1. First we develop locally but test with public url
+2. We deploye on internet then we test with public url(Heroku)
+
+
+
+
+
+
+
+
+
+______________________________________________________________
+
+NodeExpress CRUD Operations: ( Advanced Level )
+		RoleBased Token.
+
+Software Design Pattern: - MonoLithic/MVC
+
+Role : Admin,Teacher,Student
+
+
+What we will Learn New Things
+1. Ngrok (Access LocalHost from Public URL)
+2. To Work with JWT Tokens
+
+Step. 
+
+1. First we develop locally but test with public url
+2. We deploye on internet then we test with public url(Heroku)
