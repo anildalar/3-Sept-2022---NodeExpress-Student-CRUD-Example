@@ -30,30 +30,88 @@ app.get('/test',(req,res)=>{
 });
 
 app.get('/api/student/create',(req,res)=>{
+    console.log(req.query.Name)
+
+    if(req.query.Name !== undefined){
+        let studentObject = new Student({
+            StudentId:req.query.StudentId,
+            Name:req.query.Name,
+            Roll:req.query.Roll,
+            Birthday:req.query.Birthday,
+            Address:req.query.Address
+        });
+        studentObject.save()
+        .then(d=>{
+            console.log('Saved');
+            res.status(201).json({
+                msg:"Student Created"
+            });
+        })
+        .catch(e=>{
+            res.status(400).json({
+                msg:"error"
+            });
+        });
+    }else{
+        res.status(400).json({
+            msg:"Query Parameters are required"
+        });
+    }
+});
 
 
-    let studentObject = new Student({
-        StudentId:req.query.StudentId,
-        Name:req.query.Name,
-        Roll:req.query.Roll,
-        Birthday:req.query.Birthday,
-        Address:req.query.Address
-    });
-    studentObject.save()
+app.get('/api/getAllStudents',(req,res)=>{
+
+    //db.collection.find()
+    //Model.find();
+
+    //db.collection = Model
+    Student.find()
     .then(d=>{
-        console.log('Saved');
-        res.status(201).json({
-            msg:"Student Created"
+        res.status(200).json({
+            mgs:"ok",
+            data:d
         });
     })
     .catch(e=>{
         res.status(400).json({
-            msg:"error"
+            mgs:"err"+e
         });
     });
 
     
 });
+
+app.delete('/api/student/:studentId',(req,res)=>{
+    console.log(req.params.studentId);
+    if(req.params.studentId !== undefined){
+
+        //  db.collection.deleteOne();
+        //
+        // Model.deleteOne()
+        Student.deleteOne({
+            _id:req.params.studentId
+        })
+        .then(d=>{
+            res.status(200).json({
+                msg:"delete called",
+                data:d
+            });
+        })
+        .catch(e=>{
+            res.status(400).json({
+                msg:"err",
+                error:e
+            });
+        });
+        
+    }else{
+        res.status(400).json({
+            msg:"studentId is required"
+        });
+    }
+    
+})
 
 
 let port = 5000;

@@ -1,11 +1,9 @@
-Upcomming Classes 
-
-NodeExpress CRUD Operations: (Beginer Level)
+NodeExpress CRUD Operations: ( Beginer Level )
 
 E.g Do a Student CRUD Operations
 
+Software Design Pattern: -  None (Everthing will be in single file)
 
-Software Design Pattern: - None (Everthing will be in single file)
 
 What we will Learn New Things
 1. Ngrok  (Access LocalHost from Public URL)
@@ -20,10 +18,26 @@ Step.
 
 https://www.geeksforgeeks.org/node-js-crud-operations-using-mongoose-and-mongodb-atlas/
 
+
 https://ngrok.com/
 
 https://github.com/anildalar/3-Sept-2022---NodeExpress-Student-CRUD-Example/pull/new/master
 https://github.com/anildalar/3-Sept-2022---NodeExpress-Student-CRUD-Example.git
+
+
+CRUD
+
+Create - Done
+Read -   Done
+
+Delete - Done
+
+
+https://www.mongodb.com/docs/mongodb-shell/reference/compatibility/#std-label-compatibility
+
+
+
+
 
 
 
