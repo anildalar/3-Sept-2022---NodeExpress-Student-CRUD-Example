@@ -29,11 +29,14 @@ CRUD
 
 Create - Done
 Read -   Done
-
+Upage - Done
 Delete - Done
 
 
 https://www.mongodb.com/docs/mongodb-shell/reference/compatibility/#std-label-compatibility
+
+
+https://www.w3schools.com/howto/howto_js_remove_property_object.asp#:~:text=The%20delete%20operator%20deletes%20both,effect%20on%20variables%20or%20functions.
 
 
 

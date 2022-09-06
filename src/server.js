@@ -2,6 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose')
 const app = express();
 
+//If you want to recive JSON Payload, use the express.json() middleware
+
+
+app.use(express.json());
+
 //Lets create some route
 mongoose.connect('mongodb://localhost:27017')
 .then(d=>{
@@ -49,7 +54,8 @@ app.get('/api/student/create',(req,res)=>{
         })
         .catch(e=>{
             res.status(400).json({
-                msg:"error"
+                msg:"error",
+                error:e
             });
         });
     }else{
@@ -89,7 +95,7 @@ app.delete('/api/student/:studentId',(req,res)=>{
         //  db.collection.deleteOne();
         //
         // Model.deleteOne()
-        Student.deleteOne({
+        Student.findByIdAndDelete({
             _id:req.params.studentId
         })
         .then(d=>{
@@ -100,7 +106,6 @@ app.delete('/api/student/:studentId',(req,res)=>{
         })
         .catch(e=>{
             res.status(400).json({
-                msg:"err",
                 error:e
             });
         });
@@ -113,6 +118,30 @@ app.delete('/api/student/:studentId',(req,res)=>{
     
 })
 
+
+app.put('/api/student/update',function(req,res){
+
+    console.log('before remove id',req.body);
+    const id = req.body._id;
+    delete req.body._id; //remove the key
+    console.log('after remove id ',req.body); //req.body = {k:v:k:v}
+
+    //Model.findByIdAndUpdate(id, update, callback) // executes
+    Student.findByIdAndUpdate(id,req.body,(err,data)=>{
+        console.log(err,data);
+        if(err === null){
+            res.status(200).json({
+                msg:"Updated Successfully"
+            });
+        }else{
+            res.status(400).json({
+                error:err
+            });
+        }
+       
+    })
+   
+});
 
 let port = 5000;
 
