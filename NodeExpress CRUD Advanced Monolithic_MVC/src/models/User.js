@@ -17,11 +17,13 @@ let userSchema = new mongoose.Schema({
     },
     email:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     username:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     password_hash:{
         type:String,
@@ -37,6 +39,7 @@ let userSchema = new mongoose.Schema({
     timestamps:true
 });
 
+const User = mongoose.model('User', userSchema);
 
 
-module.exports = { userSchema,mongoose }
+module.exports = { User,mongoose }

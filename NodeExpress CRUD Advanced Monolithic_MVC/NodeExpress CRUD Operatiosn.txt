@@ -84,5 +84,10 @@ MVC (Model View Controller)
 
 
 
+localhost:3000/api/register
+
+
+localhost:3000/api/login
+
 
 
